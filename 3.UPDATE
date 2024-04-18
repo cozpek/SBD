@@ -29,8 +29,14 @@ WHERE id=6;
 5. Przedłuż czas wypożyczenia samochodu dla konkretnego klienta  
 Załóżmy, że klient o id=2 chce przedłużyć wypożyczenie samochodu o id=4 do nowej daty zwrotu '2024-04-25'  
 ```
+UPDATE wypozyczalnia
+SET data_zwrotu='2024-04-25'
+WHERE id_klienta=2 and id_samochodu = 4;
 ```
 6. Zmniejsz dostępność samochodów wypożyczalni o 1, gdy samochód zostanie wypożyczony  
 Załóżmy, że samochód o id=3 został wypożyczony, więc jego dostępność zostanie zmniejszona o 1  
 ```
+UPDATE samochody
+SET dostepnosc=0
+WHERE id_samochodu=3;
 ```
